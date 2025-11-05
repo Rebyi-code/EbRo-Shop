@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
-    <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Order</title>
-  <style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery Deposit & Document Upload</title>
+    <style>
 
-     :root {
+  :root {
       --cyan: #09af6f;
       --lime: #d9f200;
       --muted: #f6f3f3;
@@ -156,7 +156,7 @@
 
     /* order button */
     .order-btn {
-      background: #196b51;
+      background: #333;
       color: #fff;
       border: none;
       padding: 8px 14px;
@@ -203,27 +203,23 @@
         height: 64px
       }
     }
-  
-    
-    
 
-    
-    
-    
-    
-  
-  
-    .btn{display:inline-block;padding:10px 14px;border-radius:8px;background:var(--primary);color:#fff;text-decoration:none}
-    form input, form textarea{width:100%;padding:10px;margin-top:8px;border:1px solid #ddd;border-radius:6px}
-    form button{margin-top:10px}
- 
-  </style>
-        
+        /* Basic Styling for Clarity and Modern Look */
+        input[type="text"], input[type="file"], select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; font-size: 16px; transition: border-color 0.3s; }
+        input[type="text"]:focus, select:focus { border-color: #007bff; outline: none; }
+        .file-upload-wrapper { border: 2px dashed #ccc; padding: 20px; text-align: center; border-radius: 6px; cursor: pointer; transition: background-color 0.3s; }
+        .file-upload-wrapper:hover { background-color: #e9ecef; }
+        /* Hide default file input and use wrapper as custom button */
+        input[type="file"] { display: none; }
+        .custom-file-label { display: block; color: #007bff; font-weight: bold; margin-bottom: 5px; }
+        .submit-btn { width: 100%; padding: 15px; background-color: #28a745; color: white; border: none; border-radius: 6px; font-size: 18px; cursor: pointer; transition: background-color 0.3s; }
+        .submit-btn:hover { background-color: #218838; }
+        .note { font-size: 14px; color: #888; margin-top: 15px; text-align: center; }
+    </style>
+</head>
+<body>
 
-    </head>
-    <body>
-
-      <header class="site-header" role="banner">
+<header class="site-header" role="banner">
     <h1 class="brand" style="font-family: Georgia, 'Times New Roman', Times, serif; color: black;">EbRo-Shop</h1>
     <nav class="main-nav" role="navigation" aria-label="Main navigation">
       <a href="./index.html">Home</a>
@@ -234,28 +230,48 @@
     </nav>
   </header>
 
+<div style=" font-family: sans-serif; background-color: #f4f7f6; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0;">
+<div style=" background-color: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); width: 100%; max-width: 400px; " class="upload-container">
+    <h1 style="color: #044b15; text-align: center; margin-bottom: 25px; font-family: Georgia, 'Times New Roman', Times, serif;"><ins>Order pay by Cash</ins></h1>
+    <p><b>ማዘዝ/order ማድረግ የፈለጉትን ሜኑ/Menu ላይ ተመልክተው ከታች ያለውን ፎርም ይሙሉና <b style="color: #007bff;">submit</b> ይበሉት። ትዛዝዎን አድርሰን እንደውልሎት አለን ያዘዙትን እቃ ብር ካሽ አዘጋጅተው ይጠብቁን🙏</b></p>
+   <form action="https://formspree.io/f/mvgvvqar" method="POST" enctype="multipart/form-data">
+        
+        <div style=" margin-bottom: 20px;" class ="form-group">
+            <label style="display: block; margin-bottom: 8px; font-weight: bold; color: #044b15 " for="order-id"><b>Name/ሙሉ ስም:</b></label>
+            <input type="text" id="order-id" name="Bank Full-Name" placeholder="ሙሉ ስም" required>
+        </div>
 
-  <div style="font-family:Segoe UI, Roboto, Arial, sans-serif;margin:0;background:var(--bg);color:#123">
+         <div style=" margin-bottom: 20px;" class ="form-group">
+            <label style="display: block; margin-bottom: 8px; font-weight: bold; color: #044b15 " for="order-id"><b>Phone-number/ስልክ፟-ቁጥር:</b></label>
+            <input type="text" id="order-id" name="Account-number" placeholder="ስልክ፟-ቁጥር" required>
+        </div>
 
-    <div style="--primary:#2b7a78;--accent:#f6bc52;--bg:#f7faf9;--card:#ffffff;text-align: center;">
-      <h2><b>If you pay by ⏬</b></h2>
-      <p><a href="./cash.html" target="_blank" rel="noopener">
-          <button class="order-btn" type="button">Cash</button>
-        </a></p>  
-      <p><a href="./Bank.html" target="_blank" rel="noopener">
-          <button class="order-btn" type="button">Bank</button>
-        </a></p>
-        <p><a href="./Telebirr.html" target="_blank" rel="noopener">
-          <button class="order-btn" type="button">Telebirr</button>
-        </a>
-        </p>
-      </div> 
+      <div style=" margin-bottom: 20px;" class ="form-group">
+            <label style="display: block; margin-bottom: 8px; font-weight: bold; color: #044b15 " for="order"><b>Order/ትዕዛዝ:</b></label>
+            <input type="text" id="order" name="order" placeholder="የሚያዙት እቃ" required>
+        </div>
+
+<div style=" margin-bottom: 20px;" class ="form-group">
+            <label style="display: block; margin-bottom: 8px; font-weight: bold; color: #044b15 " for="Address"><b>Address/አድራሻ:</b></label>
+            <input type="text" id="Address" name="Address" placeholder="አድራሻዎት እዚህ ያስቀምጡ" required>
+        </div>
   
+        <button type="submit" class="submit-btn" >✅ Submit order Confirmation</button>
+        <a style="font-size: 30px;" href="./order.html">🔙</a>
+        <p class="note">Submission will securely send your data to the Hosts panel.</p>
+
+    </form>
+</div>
 
 
-  </div>
+</script>
 
-   
+</div>
 
-    </body>
+<footer class="site-footer" role="contentinfo">
+    © 2025 EbRo-Shop. All rights reserved. <a style="color: #0e91f6; font-weight: 900;"
+      href="./contactDeveloper.html">Contact-Developer</a>
+  </footer>
+
+</body>
 </html>

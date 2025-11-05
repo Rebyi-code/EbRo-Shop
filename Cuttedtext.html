@@ -1,4 +1,24 @@
-<!DOCTYPE html>
+  <div style=" margin-bottom: 20px;"  class="form-group">
+            <label style="display: block; margin-bottom: 8px; font-weight: bold; color: #555; " for="document-upload">Attach Confirmation Document/Screenshot:</label>
+            
+            <div class="file-upload-wrapper" onclick="document.getElementById('document-upload').click()">
+                <label style="display: block; margin-bottom: 8px; font-weight: bold; color: #555; " class="custom-file-label">Choose File</label>
+                <span id="file-name-display">No file selected. (Max 5MB: JPG, PNG, PDF)</span>
+                
+                <input 
+                    type="file" 
+                    id="document-upload" 
+                    name="confirmation_document" 
+                    accept=".jpg, .jpeg, .png, .pdf" 
+                    required 
+                    onchange="updateFileName(this)"
+                >
+            </div>
+        </div>
+
+
+
+        <!DOCTYPE html>
 <html>
     <head>
   <meta charset="utf-8" />
@@ -228,6 +248,7 @@
     <nav class="main-nav" role="navigation" aria-label="Main navigation">
       <a href="./index.html">Home</a>
       <a href="./Menu.html">Menu</a>
+      <a href="./Gallary.html">Gallary</a>
       <a href="./About.html">About</a>
       <a href="./Contact.html">contact</a>
       <a style="color: #222; font-weight: 700;" href="#">Order</a>
@@ -237,25 +258,48 @@
 
   <div style="font-family:Segoe UI, Roboto, Arial, sans-serif;margin:0;background:var(--bg);color:#123">
 
-    <div style="--primary:#2b7a78;--accent:#f6bc52;--bg:#f7faf9;--card:#ffffff;text-align: center;">
-      <h2><b>If you pay by ⏬</b></h2>
-      <p><a href="./cash.html" target="_blank" rel="noopener">
-          <button class="order-btn" type="button">Cash</button>
-        </a></p>  
-      <p><a href="./Bank.html" target="_blank" rel="noopener">
-          <button class="order-btn" type="button">Bank</button>
-        </a></p>
-        <p><a href="./Telebirr.html" target="_blank" rel="noopener">
-          <button class="order-btn" type="button">Telebirr</button>
-        </a>
-        </p>
-      </div> 
+
+        <div class="card" id="contact">
+         <h3>Order pay by Cash</h3>
+        
+<form action="https://formspree.io/f/mvgvvqar" method="POST">
+  <label style="color: #460aa7; font-weight: 600;">Name/ስም</label>
+  <input style="background-color: rgb(191, 199, 206);" type="text" name="name" placeholder="ስምዎን ያስቀምጡ!" required>
   
+  <label style="color: #460aa7; font-weight: 600;">Phone number/ስልክ ቁጥር</label>
+  <input style="background-color: rgb(191, 199, 206);" type="text" name="contactinfo" placeholder="ስልክ ቁጥሮን ያስቀምጡ!" required>
+  
+  <label style="color: #460aa7; font-weight: 600;">Order/ትዕዛዝ</label>
+  <textarea style="background-color: rgb(191, 199, 206);" name="message" rows="2" placeholder="ትዕዛዝዎን ይፃፉ እና ዋጋውን የማያቁ ከሆነ ይጠይቁ!" required></textarea>
+  
+  <label style="color: #460aa7; font-weight: 600;">Address/አድራሻ</label>
+  <textarea style="background-color: rgb(191, 199, 206);" name="Address" rows="2" placeholder="የምናደርስሎት ቦታ ይተቁሙን!" required></textarea>
 
+  <button style="--primary:#2b7a78;--accent:#f6bc52;--bg:#f7faf9;--card:#ffffff" class="btn" type="submit">Send</button>
+   
+  
+</form>
+<p id="status" style="margin-top:10px;color:#246;display:none">Message sent. We will call you soon.</p>
+        </div>
 
+<script>
+    function sendMessage(e) {
+      e.preventDefault();
+      // Simple demo: show confirmation text
+      document.getElementById('status').style.display = 'block';
+      // Clear the form
+      document.getElementById('name').value = '';
+      document.getElementById('contactinfo').value = '';
+      document.getElementById('message').value = '';
+      document.getElementById('address').value = '';
+    }
+  </script>
   </div>
 
-   
-
+   <footer class="site-footer" role="contentinfo">
+    © 2025 EbRo-Shop. All rights reserved. <a style="color: #0e91f6; font-weight: 900;"
+      href="./contactDeveloper.html">Contact-Developer</a>
+  </footer>
+  
     </body>
 </html>

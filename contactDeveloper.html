@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-      <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  
-  <title>contact-us</title>
-  <style>
-    :root {
-      --cyan: #00e6ef;
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        
+  :root {
+      --cyan: #09af6f;
       --lime: #d9f200;
       --muted: #f6f3f3;
       --card-border: #efebef;
@@ -185,7 +186,7 @@
       header .brand {
         font-size: 22px;
       }
-
+    }
       nav.main-nav {
         gap: 12px;
         font-size: 13px;
@@ -202,21 +203,55 @@
         width: 64px;
         height: 64px
       }
-    }
-  </style>  
-    </head>
-    <body>
-         <header class="site-header" role="banner">
+       
+      .social-links a {
+            font-size: 3em; /* Makes the icon large */
+            margin: 0 15px;
+            color: #333; /* Default icon color */
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .social-links a:hover {
+            color: #007bff; /* Color change on hover */
+        }
+        /* Specific colors for better branding */
+    
+    </style>
+</head>
+<body>
+
+      <header class="site-header" role="banner">
     <h1 class="brand" style="font-family: Georgia, 'Times New Roman', Times, serif; color: black;">EbRo-Shop</h1>
     <nav class="main-nav" role="navigation" aria-label="Main navigation">
       <a href="./index.html">Home</a>
       <a  href="./index.html">Menu</a>
-      <a href="./Gallary.html">Gallary</a>
       <a href="./About.html">About</a>
       <a style="color: #222; font-weight: 700;" href="#">contact</a>
       <a href="./order.html">Order</a>
     </nav>
   </header>
-        <h1>contact Developer page</h1>
-    </body>
+
+  
+  <div style="font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;" >
+    <h1>Welcome to Developer section🙌 </h1>
+    <p style="line-height: 1.0;"> 
+      I would love to hear some questions from you like if you want to build a <b style="color: #0421ff;">website</b>,<br>
+       <b style="color: #0421ff;">mobile apps</b> and <b style="color: #0421ff;">need help</b> from me click on any of the icons below to find me on social media.</p>
+
+    <div class="social-links">
+        <a href="https://fb.com/l/6lp1kJRRR" target="_blank" title="Facebook Profile">
+            <i style="color: #0e60b1;"  class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.t.me/Rebyi43" target="_blank" title="telegram profile">
+            <i style="color: #0088cc;" class="fab fa-telegram"></i>
+        </a>
+        <a href="#" target="_blank" title="WhatsApp">
+            <i style="color: #25d366; " class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+    </div>
+
+</body>
 </html>
